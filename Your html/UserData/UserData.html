@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<style>
+    @media (min-width: 767px) {
+        .HomepageBody {
+            width:800px;
+            background: #E7E9EB;
+        }
+    }
+</style>
+
+<body class="container-md HomepageBody">
+    <h1 class="text-center mt-3"><u><b>User's data</b></u></h1>
+    <h4 class="text-center mt-5"><span>Your Balance: 60</span>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Transation
+        </button>
+    </h4>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Transation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/userdata" method="post">
+                        <div class="mb-2">
+                            <label for="TransationAmount" class="form-label">Transation Amount</label>
+                            <input type="number" placeholder="100" class="form-control" required id="TransationAmount"
+                                name="TransationAmount">
+                        </div>
+                        <div class="mb-3">
+                            <label for="TransationTitle" class="form-label">Transation Title</label>
+                            <input type="text" class="form-control" placeholder="My Salary" required id="TransationTitle"
+                                name="TransationTitle" autocomplete="off">
+                        </div>
+                        <label for="TransationSelect" class="form-label">Transation Select</label>
+                        <select class="form-select mb-3" id="TransationSelect" name="TransationSelect" required
+                            aria-label="Default select example">
+                            <option value="">Select Value</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- old Transation -->
+    <h3 class="mt-5"><u>Transation History:-</u></h3>
+    <table class="table table-dark text-center mt-3">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Total Income</th>
+                <th scope="col">Total Expenses</th>
+                <th scope="col">WAllet Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>500</td>
+                <td>420</td>
+                <td>80</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
