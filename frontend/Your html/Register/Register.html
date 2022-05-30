@@ -20,22 +20,22 @@
 
 <body class="container-md RegisterBody">
     <h1 class="text-center mt-5"><b><u>Register</u></b></h1>
-    <form action="/register" method="POST">
+    <form action="http://localhost:3000/api/v2/register" method="POST">
         <div class="mb-3">
-            <label for="Name" class="form-label">Name</label>
-            <input type="text" class="form-control" required id="Name" name="Name" autocomplete="off">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" required id="Name" name="name" autocomplete="off">
         </div>
         <div class="mb-3">
-            <label for="EmailAddress" class="form-label">Email address</label>
-            <input type="email" class="form-control" required id="EmailAddress" name="EmailAddress" autocomplete="off">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" required id="EmailAddress" name="email" autocomplete="off">
         </div>
         <div class="mb-3">
             <label for="PhoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" pattern="[1-9]{1}[0-9]{9} required id="PhoneNumber" name="PhoneNumber" autocomplete="off">
+            <input type="number" class="form-control" required id="PhoneNumber" name="PhoneNumber" autocomplete="off">
         </div>
         <div class="mb-3">
-            <label for="Password" class="form-label">Password</label>
-            <input type="password" class="form-control" required id="Password" name="Password" minlength="8" autocomplete="off">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" required id="Password" name="password" minlength="8" autocomplete="off">
         </div>
         <div class="mb-3">
             <label for="ConfirmPassword" class="form-label">Confirm Password</label>

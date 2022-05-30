@@ -25,7 +25,7 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, 'Login/Login.html'));
 })
 
-app.get("/register", (req, res) => {
+app.get("http://localhost:3000/api/v2/register", (req, res) => {
     res.sendFile(path.join(__dirname, 'Register/Register.html'));
 })
 
