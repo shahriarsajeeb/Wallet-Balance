@@ -1,6 +1,13 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Admin = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get("/api/v2/admin/user").then((res) => {
+      setData(res.data.user);
+    });
+  }, []);
   return (
     <div className="AdminBody container-md">
       <h1 className="text-center mt-3">
@@ -20,86 +27,16 @@ const Admin = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>FullName</td>
-            <td>fullname@gmail.com</td>
-            <td>5000</td>
-            <td>4200</td>
-            <td>800</td>
-          </tr>
+        {data.map((i, index) => (
+            <tr key={index}>
+              <th>{i._id}</th>
+              <td>{i.name}</td>
+              <td>{i.email}</td>
+              <td>5000</td>
+              <td>4200</td>
+              <td>800</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

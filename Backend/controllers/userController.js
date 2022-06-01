@@ -102,11 +102,20 @@ exports.userdata = async (req, res) => {
   });
 };
 
-// user transations get
+// all user transations get
 exports.transections = async (req, res) => {
   const userData = await UserDataModel.find();
   res.status(200).json({
     success: true,
     userData,
+  });
+}
+
+// All user data ---- only for admin
+exports.allUserData = async (req, res) => {
+  const user = await User.find();
+  res.status(200).json({
+    success: true,
+    user,
   });
 }
